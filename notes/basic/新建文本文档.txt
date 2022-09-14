@@ -1,0 +1,3 @@
+1. define stream tcp_stream(ip string,...);  //从source目录下加载所有的source，定义stream
+2. from tcp_stream[DstClassify1Id == 5 ...] select * insert into ActiveRDPConnection_stream;   //从model目录下读取model.json中的rules中的filters做过滤。
+3. from ActiveRDPConnection_stream#window.custom:externalTimeBatch(..) select 字段 insert into rule_stream  //从filter读取聚合条件和所需要的字段，插入rule_stream
